@@ -1,19 +1,10 @@
-require 'rubygems'
-require 'rake'
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
 
-require 'rake/testtask'
+RSpec::Core::RakeTask.new
 
 Dir['tasks/**/*.rake'].each { |t| load t }
 
 task :default => [:"spec:with_tzinfo_gem", :"spec:with_active_support"]
-
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "ri_cal #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+#task :default => :spec
+task :test => :spec

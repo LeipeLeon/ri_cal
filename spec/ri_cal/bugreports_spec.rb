@@ -229,25 +229,21 @@ ENDVENUE
   end
 end
 
-context "ticket #23" do
-  describe "RecurrenceRule" do
+  describe "RecurrenceRule ticket #23" do
     it "should convert the rrule string to a hash" do
       rrule = RiCal::PropertyValue::RecurrenceRule.convert(nil, 'INTERVAL=2;FREQ=WEEKLY;BYDAY=TH,TU')
       rrule.to_options_hash.should == {:freq => 'WEEKLY', :byday => %w{TH TU}, :interval => 2}
     end
   end
-end
 
-context "ticket #26" do
-  context "Date property" do
+  describe "Date property ticket #26" do
     it "should handle for_parent" do
       lambda {
       RiCal::PropertyValue::Date.convert(:foo, Date.parse("20090927")).for_parent(:bar)}.should_not raise_error
     end
   end
-end
 
-context "ticket 29:supress-x-rical-tzsource-when-not-relevant" do
+describe "ticket 29:supress-x-rical-tzsource-when-not-relevant" do
   it "should parse its own output" do
     cal_string = %Q(BEGIN:VCALENDAR
 PRODID:-//Google Inc//Google Calendar 70.9054//EN
@@ -260,7 +256,7 @@ END:VCALENDAR)
   end
 end
 
-context "X-properties" do
+describe "X-properties" do
   it "should round-trip the X-WR-CALNAME property" do
     cal_string = %Q(BEGIN:VCALENDAR
 PRODID:-//Markthisdate.com\,0.7

@@ -1,9 +1,9 @@
 #- ©2009 Rick DeNatale, All rights reserved. Refer to the file README.txt for the license
 
-require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ri_cal]))
+#require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib ri_cal]))
+require 'ri_cal'
 require 'cgi'
 require 'tzinfo'
-
 
 module Kernel
   if ENV.keys.find {|env_var| env_var.match(/^TM_/)}
