@@ -1,3 +1,4 @@
+   Fork from rubyredrick
 === v0.8.8 2011-02-13
    Regenerate gemspec for version 0.8.8 
    Version bump to 0.8.8 

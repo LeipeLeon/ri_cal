@@ -1,7 +1,8 @@
 == RI_CAL -- a new implementation of RFC2445 in Ruby
 http://ri-cal.rubyforge.org/
 
-    by Rick DeNatale
+by Rick DeNatale
+
 == DESCRIPTION:
 
 A new Ruby implementation of RFC2445 iCalendar.
@@ -382,9 +383,11 @@ or by a recent(>= 2.2) version of the ActiveSupport gem which is part of Ruby on
     4. rake spec
     5. rake install_gem
 
+== COPYRIGHT
 
+©2009 Rick DeNatale, All rights reserved. Refer to the file README.txt for the license
 
-== LICENSE:
+== LICENSE
 
 (The MIT License)
 

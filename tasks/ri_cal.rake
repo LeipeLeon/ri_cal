@@ -403,10 +403,3 @@ namespace :rical do
   updateTask File.join(File.dirname(__FILE__), '..', '/component_attributes', '*.yml'), :gen_propmodules
 
 end  # namespace :rical
-
-desc 'add or update copyright in code and specs'
-task :copyrights do
-    require 'mmcopyrights'
-    MM::Copyrights.process('lib', "rb", "#-", IO.read('copyrights.txt'))
-    MM::Copyrights.process('spec', "rb", "#-", IO.read('copyrights.txt'))
-end
