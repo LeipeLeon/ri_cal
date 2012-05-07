@@ -1,26 +1,3 @@
-desc "Run all specs"
-RSpec::Core::RakeTask.new do |t|
-  t.rspec_opts = ['--options', "spec/spec.opts"]
-  t.pattern = 'spec/**/*_spec.rb'
-  t.ruby_opts = "-rubygems"
-end
-
-namespace :spec do
-  desc "Run all specs in the presence of ActiveSupport"
-  RSpec::Core::RakeTask.new(:with_active_support) do |t|
-    t.rspec_opts = ['--options', "spec/spec.opts"]
-    t.pattern = 'spec/**/*_spec.rb'
-    t.ruby_opts = "-r #{File.join(File.dirname(__FILE__), *%w[gem_loader load_active_support])}"
-  end
-
-  desc "Run all specs in the presence of the tzinfo gem"
-  RSpec::Core::RakeTask.new(:with_tzinfo_gem) do |t|
-    t.rspec_opts = ['--options', "spec/spec.opts"]
-    t.pattern = 'spec/**/*_spec.rb'
-    t.ruby_opts = "-r #{File.join(File.dirname(__FILE__), *%w[gem_loader load_tzinfo_gem])}"
-  end
-end
-
 namespace :performance do
   desc 'Run all benchmarks'
   task :benchmark do
@@ -44,7 +21,6 @@ namespace :performance do
       `#{cmd}`
     end
   end
-
 end
  
   
