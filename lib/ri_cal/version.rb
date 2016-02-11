@@ -1,3 +1,3 @@
 module RiCal
-  VERSION = "0.9.0"
+  VERSION = "0.8.9"
 end
